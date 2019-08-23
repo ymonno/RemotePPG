@@ -14,7 +14,7 @@
 %  frameRate: framerate of the movie
 %  time: timestamp of BVP [sec]
 %
-% Last Update: July 18, 2019
+% Last Update: August 13, 2019
 %**************************************************************************
 function [bvpCandidates,frameRate,time] = getCandidateSignals_AllFrame(videoFileName,isDisplayFacialLandmark,startTime,endTime)
 
