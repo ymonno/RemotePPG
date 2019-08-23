@@ -119,7 +119,7 @@ for pairCnt = 1:numPairs
         x(1,1) = points{pairCnt}{patchCnt}(2)*xRange + double(bboxLeftX + delta);
         
         for frameCnt = 2:length(trackedLandmarks)
-            if isempty(trackedLandmarks(frameCnt).faces.landmarks)
+            if isempty(trackedLandmarks(frameCnt).faces)
                 trackedLandmarks(frameCnt).faces.landmarks = trackedLandmarks(frameCnt-1).faces.landmarks;
                 % If detecter can't find facial landamrks, copy landmarks
                 % of the previous frame
@@ -184,7 +184,7 @@ for pairCnt = 1:numPairs
             isReliable(1,pairCnt) = false;
         end
     else
-        disp(['ICA failed at ',num2str(pairCnt),'th patches...'])
+        disp(['ICA failed at ',num2str(pairCnt),'the patches...'])
         isReliable(1,pairCnt) = false;
     end
     disp([num2str(pairCnt),'/',num2str(numPairs)])
